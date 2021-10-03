@@ -159,6 +159,23 @@ var crypto = [{
   price: "1.00",
   id: 7
 }];
+console.log(crypto);
+var grid = document.querySelector(".cryptogrid");
+var display = document.querySelector(".dataresults");
+grid.addEventListener("click", function (event) {
+  if (!event.target.closest("button")) return;
+  var grid = event.target;
+  var gridvalue = grid.textContent;
+  display.textContent = gridvalue;
+  var bit = crypto.filter(function (currency) {
+    if (grid.textContent === "Bitcoin", "Etherium", "Cardano", "Polkadot", "Monero", "Stellar", "ChainLink", "Tether") {
+      return crypto.price;
+    }
+
+    console.log(crypto.price);
+  });
+  console.log(grid.textContent);
+});
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -187,7 +204,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51527" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51002" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

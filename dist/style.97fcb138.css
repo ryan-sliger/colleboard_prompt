@@ -9,7 +9,7 @@ body {
   color: yellowgreen;
 }
 
-.crypto-grid {
+.cryptogrid {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   column-gap: 2.5%;
 }
 
-.data-results {
+.dataresults {
   color: white;
   display: grid;
   justify-content: center;

@@ -17,3 +17,35 @@ const crypto = [
   { name: "Chainlink", price: "26.88", id: 6 },
   { name: "Tether", price: "1.00", id: 7 },
 ];
+
+console.log(crypto);
+
+const grid = document.querySelector(".cryptogrid");
+const display = document.querySelector(".dataresults");
+
+grid.addEventListener("click", (event) => {
+  if (!event.target.closest("button")) return;
+
+  const grid = event.target;
+  const gridvalue = grid.textContent;
+
+  display.textContent = gridvalue;
+
+  const bit = crypto.filter(function (currency) {
+    if (
+      (grid.textContent === "Bitcoin",
+      "Etherium",
+      "Cardano",
+      "Polkadot",
+      "Monero",
+      "Stellar",
+      "ChainLink",
+      "Tether")
+    ) {
+      return crypto.price;
+    }
+    console.log(crypto.price);
+  });
+
+  console.log(grid.textContent);
+});
