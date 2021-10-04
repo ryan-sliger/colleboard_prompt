@@ -118,67 +118,40 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"index.js":[function(require,module,exports) {
-var btcdata = document.querySelectorAll("[data-Bitcoin]");
-var ethdata = document.querySelectorAll("[data-Ethereum]");
-var carddata = document.querySelectorAll("[data-Cardano]");
-var poldata = document.querySelectorAll("[data-Polkadot]");
-var mondata = document.querySelectorAll("[data-Monero]");
-var steldata = document.querySelectorAll("[data-Stellar]");
-var chaindata = document.querySelectorAll("[data-Chainlink]");
-var tethdata = document.querySelectorAll("[data-Tether]");
-var crypto = [{
+var data = [{
   name: "Bitcoin",
-  price: "47508.30",
-  id: 0
-}, {
-  name: "Etherium",
-  price: "3385.38",
-  id: 1
+  price: "47508.30"
 }, {
   name: "Cardano",
-  price: "2.24",
-  id: 2
+  price: "2.24"
 }, {
   name: "Polkadot",
-  price: "31.84",
-  id: 3
+  price: "31.84"
 }, {
   name: "Monero",
-  price: "254.91",
-  id: 4
+  price: "254.91"
 }, {
   name: "Stellar",
-  price: "0.316",
-  id: 5
+  price: "0.316"
 }, {
   name: "Chainlink",
-  price: "26.88",
-  id: 6
-}, {
-  name: "Tether",
-  price: "1.00",
-  id: 7
+  price: "26.88"
 }];
 var grid = document.querySelector(".cryptogrid");
 var display = document.querySelector(".dataresults");
+var displayp = document.querySelector(".dataresults2");
 grid.addEventListener("click", function (event) {
   if (!event.target.closest("button")) return;
   var grid = event.target;
   var gridvalue = grid.textContent;
   display.textContent = gridvalue;
-  var bit = crypto.filter(function (crypto) {
-    if (grid.textContent === "Bitcoin", "Etherium", "Cardano", "Polkadot", "Monero", "Stellar", "ChainLink", "Tether") {
-      return crypto.price;
+  var Bit = data.filter(function (cprice) {
+    if (grid.textContent === cprice.name) {
+      return cprice.price;
     }
   });
-  console.log(grid.textContent);
-});
-var price = crypto.filter(function (crypto) {
-  if (crypto.price < "0") {
-    return true;
-  }
-
-  console.log(crypto.price);
+  console.log(Bit[0].price);
+  displayp.innerHTML = "<h3 class=\"dataresults2\">\n  ".concat(Bit[0].price, "\n</h3>");
 });
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -208,7 +181,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51002" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54855" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
