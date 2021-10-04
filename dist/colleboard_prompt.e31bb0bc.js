@@ -159,7 +159,6 @@ var crypto = [{
   price: "1.00",
   id: 7
 }];
-console.log(crypto);
 var grid = document.querySelector(".cryptogrid");
 var display = document.querySelector(".dataresults");
 grid.addEventListener("click", function (event) {
@@ -167,14 +166,19 @@ grid.addEventListener("click", function (event) {
   var grid = event.target;
   var gridvalue = grid.textContent;
   display.textContent = gridvalue;
-  var bit = crypto.filter(function (currency) {
+  var bit = crypto.filter(function (crypto) {
     if (grid.textContent === "Bitcoin", "Etherium", "Cardano", "Polkadot", "Monero", "Stellar", "ChainLink", "Tether") {
       return crypto.price;
     }
-
-    console.log(crypto.price);
   });
   console.log(grid.textContent);
+});
+var price = crypto.filter(function (crypto) {
+  if (crypto.price < "0") {
+    return true;
+  }
+
+  console.log(crypto.price);
 });
 },{}],"../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

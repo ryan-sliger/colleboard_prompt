@@ -18,8 +18,6 @@ const crypto = [
   { name: "Tether", price: "1.00", id: 7 },
 ];
 
-console.log(crypto);
-
 const grid = document.querySelector(".cryptogrid");
 const display = document.querySelector(".dataresults");
 
@@ -31,7 +29,7 @@ grid.addEventListener("click", (event) => {
 
   display.textContent = gridvalue;
 
-  const bit = crypto.filter(function (currency) {
+  const bit = crypto.filter(function (crypto) {
     if (
       (grid.textContent === "Bitcoin",
       "Etherium",
@@ -44,8 +42,14 @@ grid.addEventListener("click", (event) => {
     ) {
       return crypto.price;
     }
-    console.log(crypto.price);
   });
 
   console.log(grid.textContent);
+});
+
+const price = crypto.filter(function (crypto) {
+  if (crypto.price < "0") {
+    return true;
+  }
+  console.log(crypto.price);
 });

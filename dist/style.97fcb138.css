@@ -28,4 +28,12 @@ body {
   padding-top: 10rem;
 }
 
+.dataresults2 {
+  color: white;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+}
+
 /*# sourceMappingURL=/style.97fcb138.css.map */
