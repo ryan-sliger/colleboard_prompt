@@ -7,9 +7,11 @@ var data = [
   { name: "Chainlink", price: "26.88" },
 ];
 
+const Ethereum = 3612.56;
 const grid = document.querySelector(".cryptogrid");
 const display = document.querySelector(".dataresults");
 const displayp = document.querySelector(".dataresults2");
+const displayR = document.querySelector(".a");
 
 grid.addEventListener("click", (event) => {
   if (!event.target.closest("button")) return;
@@ -29,4 +31,12 @@ grid.addEventListener("click", (event) => {
   displayp.innerHTML = `<h3 class="dataresults2">
   ${Bit[0].price}
 </h3>`;
+
+  console.log(displayR);
+
+  const rates = Bit[0].price / Ethereum;
+  console.log(rates);
+  displayR.innerHTML = `<p5 class="a">
+  ${rates}
+</p5>`;
 });
